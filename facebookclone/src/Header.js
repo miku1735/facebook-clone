@@ -22,11 +22,12 @@ function Header() {
         ></img>
         <div className="header__input">
           <SearchIcon></SearchIcon>
-          <input type="text"></input>
+          <input placeholder="Search Facebook" type="text"></input>
         </div>
       </div>
       <div className="header__center">
-        <div className="header__option">
+        <div className="header__option
+        header__option--active">
           <HomeIcon fontSize="large"></HomeIcon>
         </div>
         <div className="header__option">
