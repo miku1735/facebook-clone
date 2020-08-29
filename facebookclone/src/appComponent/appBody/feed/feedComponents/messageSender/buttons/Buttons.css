@@ -1,0 +1,12 @@
+.Buttons{
+    display: flex;
+    padding: 15px;
+    border-radius: 13px;
+    align-items: center;
+    transition: background-color 200ms ease-in;
+    transition: transform 100ms ease-in;
+}
+.Buttons:hover{
+    background-color: #eff2f5;
+    transform: scale(1.05);
+}

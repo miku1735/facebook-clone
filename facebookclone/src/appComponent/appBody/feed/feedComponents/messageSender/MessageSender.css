@@ -1,0 +1,53 @@
+.MessageSender{
+    background-color: white;
+    border-radius: 14px;
+    padding: 30px 10px;
+    margin-top: 40px;
+    max-width: 750px;
+    box-shadow: 0px 5px 17px -7px rgba(0,0,0,0.75);
+}
+.MessageSender__top{
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 5px 20px 5px;
+}
+.MessageSender__bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 55px 0px 55px;
+}
+
+.MessageSender__top__left{
+    display: flex;
+    flex:1;
+    background-color: #eff2f5;
+    align-items: center;
+    padding: 8px 8px 8px 10px;
+    border-radius: 33px;
+    margin-left: 10px;
+}
+.MessageSender__top__left > input {
+    height: 40px;
+    flex:1;
+    margin-left: 10px;
+    border-width: 0;
+    background-color: transparent;
+    outline-width: 0;
+}
+
+.MessageSender__top__right{
+    display: flex;
+    background-color: #eff2f5;
+    align-items: center;
+    padding: 8px;
+    border-radius: 33px;
+    margin-left: 30px;
+    
+}
+.MessageSender__top__right > input {
+    height: 40px;
+    border-width: 0;
+    background-color: transparent;
+    margin-left: 20px;
+    outline-width: 0;
+}

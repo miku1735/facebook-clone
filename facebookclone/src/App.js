@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.css';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Feed from "./Feed"
+import Header from './appComponent/header/Header';
+import Sidebar from './appComponent/appBody/sidebar/Sidebar';
+import Feed from "./appComponent/appBody/feed/Feed"
 function App() {
   return (
     <div className="app"> 
-      {/* Header */}
-      <Header></Header>
+      <Header/>
       <div className="app__body"> 
         <Sidebar/>
         <Feed/>
-        {/* Widget */}
+        {/* <Sidebar/> */}
       </div>
     </div>
   );
