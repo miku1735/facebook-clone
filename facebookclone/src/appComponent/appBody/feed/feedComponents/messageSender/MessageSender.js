@@ -4,18 +4,39 @@ import { Avatar } from '@material-ui/core'
 import Buttons from './buttons/Buttons'
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+
 function MessageSender() {
+    var [input,setInput] = React.useState("");
+    var [imageURL, setImageURL] = React.useState("");
+
+    var handleSubmit = (e)=> {
+        e.preventDefault()
+        setInput(""); setImageURL(""); // set all state to null values;
+    }
+
     return (
         <div className="MessageSender">
-            <div className="MessageSender__top">
+            <form className="MessageSender__top">
                 <div className="MessageSender__top__left">
                     <Avatar className="MessageSender__top__avatar" src={user}> </Avatar>
-                    <input placeholder="What's on your mind Mayank" type="text"></input>
+                    <input 
+                        placeholder="What's on your mind Mayank" 
+                        type="text"
+                        value={input}
+                        onChange={(e)=>setInput(e.target.value)}
+                    />
                 </div>
                 <div className="MessageSender__top__right">
-                    <input placeholder="Image URL (Optional)" type="text"></input>
+                    <input 
+                        placeholder="Image URL (Optional)" 
+                        type="text"
+                        value={imageURL}
+                        onChange={(e)=>setImageURL(e.target.value)}
+                    />
                 </div>
-            </div>
+                <button onClick={handleSubmit} type="submit"> hidden submit </button>
+            </form>
             <div className="MessageSender__bottom">
                 <Buttons 
                     Icon={VideocamIcon} 
@@ -28,9 +49,9 @@ function MessageSender() {
                     color={"green"}
                 />
                 <Buttons 
-                    Icon={VideocamIcon} 
+                    Icon={InsertEmoticonIcon} 
                     title={"Feeling/Activity"}
-                    color={"yellow"}
+                    color={"blue"}
                 />
             </div>
         </div>

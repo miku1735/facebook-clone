@@ -10,3 +10,7 @@
     background-color: #eff2f5;
     transform: scale(1.05);
 }
+
+.Buttons > h5 {
+    margin-left: 10px;
+}

@@ -1,0 +1,15 @@
+.Widgets{
+    justify-content: start;
+    padding:15px;
+}
+
+.Widget{
+    display: flex;
+    padding: 15px;
+    margin-right:45px;
+    align-items: center;
+}
+.Widget > h3 {
+    font-size: medium;
+    margin-left:15px
+}
