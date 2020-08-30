@@ -5,13 +5,21 @@ import Buttons from './buttons/Buttons'
 import VideocamIcon from '@material-ui/icons/Videocam';
 import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-
+import FeedContext from "../../feedComponents/context/feedContext"
 function MessageSender() {
     var [input,setInput] = React.useState("");
     var [imageURL, setImageURL] = React.useState("");
+    const [,updateFeed] = React.useContext(FeedContext)
 
     var handleSubmit = (e)=> {
         e.preventDefault()
+        updateFeed({
+            message: input,
+            profilePic: user,
+            image: imageURL,
+            userName: "Mayank",
+            timestamp: "26 August at 17:24",
+        });
         setInput(""); setImageURL(""); // set all state to null values;
     }
 

@@ -3,19 +3,52 @@ import StoryReel from "./feedComponents/storyReels/StoryReel"
 import "./Feed.css"
 import MessageSender from './feedComponents/messageSender/MessageSender'
 import Posts from './feedComponents/posts/Posts'
+import {FeedProvider} from "./feedComponents/context/feedContext"
+
 function Feed() {
+    const [feeds, setFeeds] = React.useState(
+            [
+                {
+                    profilePic: {profilePic},
+                    message: "Today is my birthday",
+                    timestamp: "26 August at 17:24",
+                    userName: "Mayank",
+                    image: "https://www.oyehappy.com/blog/wp-content/uploads/2017/03/bday.jpg"
+                },
+                {
+                    profilePic: {profilePic},
+                    message: "Love the Himalayas",
+                    timestamp: "26 August at 17:24",
+                    userName: "Mayank",
+                    image: "https://www.pixelstalk.net/wp-content/uploads/images1/Himalayas-Wallpaper-HD-768x432.jpg"
+                }
+            ]
+        )
+    var updateFeeds = (data)=>{
+        setFeeds([...feeds,data])
+    }
     return (
-        <div className="Feed">
-            <StoryReel/>
-            <MessageSender/>
-            <Posts
-                profilePic = {profilePic}
-                message = "Today is my birthday"
-                timestamp = "26 August at 17:24"
-                userName = "Mayank"
-                image = "https://www.oyehappy.com/blog/wp-content/uploads/2017/03/bday.jpg"
-            />
-        </div>
+        <FeedProvider value={[feeds,updateFeeds]}>
+            <div className="Feed">
+                <StoryReel/>
+                <MessageSender/>
+                {
+                    feeds.map((d,index)=>{
+                        return <Posts
+                                    key={index}
+                                    image = {d.image}
+                                    message = {d.message}
+                                    userName = {d.userName}
+                                    profilePic = {profilePic}
+                                    timestamp = "26 August at 17:24"
+                                />
+                    }
+                    )
+                }
+                
+                
+            </div>
+            </FeedProvider>
     )
 }
 
