@@ -1,11 +1,25 @@
 import React from 'react'
 import "./Login.css"
 import {Button} from "@material-ui/core"
+import {auth,provider} from "../../firebase"
+import {UserContext} from "../../userContext/UserContextProvider"
 
 function Login() {
 
+    var [userData,setUserData] = React.useContext(UserContext)
     var onLogin = () => {
         // ..Login 
+
+        auth
+            . signInWithPopup(provider)
+            .then((result)=>{
+                console.log(result.additionalUserInfo.profile)
+                setUserData({...userData, 
+                                name:result.additionalUserInfo.profile.name,
+                                picture:result.additionalUserInfo.profile.picture
+                            })
+            })
+            .catch((error) => {alert(error.message)})
     }
 
     return (

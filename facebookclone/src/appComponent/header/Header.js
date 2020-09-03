@@ -11,8 +11,10 @@ import { Avatar, IconButton } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
 import ForumIcon from '@material-ui/icons/Forum';
+import {UserContext} from "../../userContext/UserContextProvider"
 
 function Header() {
+  var [userData,] = React.useContext(UserContext)
   return (
     <div className="header">
       <div className="header__left">
@@ -45,8 +47,8 @@ function Header() {
       </div>
       <div className="header__right">
         <div className="header__info">
-          <Avatar></Avatar>
-          <h4>Mayank</h4>
+          <Avatar src={userData.picture}></Avatar>
+          <h4>{userData.name}</h4>
         </div>
         <IconButton>
           <AddIcon />
