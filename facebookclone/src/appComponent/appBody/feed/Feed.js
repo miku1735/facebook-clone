@@ -25,7 +25,7 @@ function Feed() {
             ]
         )
     var updateFeeds = (data)=>{
-        setFeeds([...feeds,data])
+        setFeeds([data,...feeds])
     }
     return (
         <FeedProvider value={[feeds,updateFeeds]}>

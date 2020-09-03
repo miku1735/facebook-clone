@@ -1,5 +1,8 @@
 .Sidebar{
+    top: 0;
     flex:0.33;
+    display: block;
+    position: sticky;
     padding: 15px 10px;
-    /* position: fixed; */
+    position: -webkit-sticky;
 }
